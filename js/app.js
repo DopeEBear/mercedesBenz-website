@@ -1,0 +1,46 @@
+let init = () => {
+  // Variables
+  let container = document.getElementsByClassName("jumbo-slider__container")[0],
+    slides = document.getElementsByClassName("jumbo-slider__slide"),
+    circles = document.getElementsByClassName("jumbo-slider__circle"),
+    links = document.getElementsByClassName("jumbo-slider__link"),
+    current = 1,
+    time = 6000;
+
+  //Add Animation Class to Slide
+  slides[0].classList.add("jumbo-slider__slide--active");
+  links[current - 1].classList.add("jumbo-slider__link--active");
+  circles[current - 1].classList.add("jumbo-slider__circle--filled");
+
+  // Update Elipsis and Links
+  let updateNav = (current) => {
+    for (let index = 0; index < slides.length; index++) {
+      links[index].classList.remove("jumbo-slider__link--active");
+      circles[index].classList.remove("jumbo-slider__circle--filled");
+    }
+
+    links[current - 1].classList.add("jumbo-slider__link--active");
+    circles[current - 1].classList.add("jumbo-slider__circle--filled");
+  };
+
+  // Animation for Slides
+  let startSliding = () => {
+    setInterval(() => {
+      slides[1].classList.add("jumbo-slider__slide--active");
+      slides[0].classList.remove("jumbo-slider__slide--active");
+      container.appendChild(slides[0].cloneNode([true]));
+      container.removeChild(slides[0]);
+
+      if (current < slides.length) {
+        current++;
+        updateNav(current);
+      } else {
+        current = 1;
+        updateNav(current);
+      }
+    }, time);
+  };
+  startSliding();
+};
+
+init();
