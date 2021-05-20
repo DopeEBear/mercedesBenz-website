@@ -1,1 +1,1 @@
-# mercedesBenz-website This is a mock-up for Mercedes-Benz website. This show cases a slider ftyle function for background images which is ran constantly and continues to loop. This was written with HTML, CSS, and JavaScript
+# mercedesBenz-website This is a mock-up for Mercedes-Benz website. This show cases a slider style function for background images which is ran constantly and continues to loop and demonstrates DOM manipulation. This was written with HTML, CSS, and JavaScript
